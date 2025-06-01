@@ -7,7 +7,7 @@ const filtersSlice = createSlice({
     },
     reducers: {
         changeFilter(state, action) {
-            state.name = action.payload;
+            state.name = action.payload.toLowerCase();
         }
     }
 });
@@ -15,3 +15,5 @@ const filtersSlice = createSlice({
 export const { changeFilter } = filtersSlice.actions;
 
 export const filtersReducer = filtersSlice.reducer;
+
+export const selectFilterName = (state) => state.filters.name;
