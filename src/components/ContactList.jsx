@@ -15,9 +15,8 @@ export default function ContactList() {
             {error && <ErrorMessage message={error} />}
             {filteredContacts.length > 0 && <ul className={css.container}>
                 {filteredContacts.map(({id, name, number}) => (
-                    <li>
+                    <li key={id}>
                         <Contact
-                            key={id}
                             id={id}
                             name={name}
                             number={number}
